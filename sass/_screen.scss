@@ -1,0 +1,18 @@
+.screen {
+  background-color: var(--bg-screen);
+  color: var(--text-screen);
+  text-align: right;
+  font-size: $fontSize-number;
+  border-radius: 0.2em;
+  padding: 0.6em;
+  position: relative;
+  transition: $transition-base;
+}
+.screen__com {
+  color: inherit;
+  position: absolute;
+  bottom: 0;
+  right: 0.6em;
+  font-size: 0.6em;
+  transform: translate(-100%, 0);
+}

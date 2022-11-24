@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-header);
+  transition: $transition-base;
+}
+.header > * {
+  transition: inherit;
+}
+.theme {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.theme__options {
+  display: flex;
+  flex-direction: row;
+  width: 60px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 14px;
+}
+.theme__options > span {
+  flex: 1;
+  text-align: center;
+}
+.theme__range {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--bg-toggle);
+  border-radius: 0.8em;
+  height: 22px;
+  padding: 4px;
+}
+.theme__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--key-result);
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+}
+
+.theme__range::-moz-range-thumb {
+  width: 16px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  border-radius: 50%;
+  background: var(--key-result);
+  cursor: pointer; /* Cursor on hover */
+  border: none;
+}

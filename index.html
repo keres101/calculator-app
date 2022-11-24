@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Calculator app</title>
+  </head>
+  <body class="">
+    <div class="body">
+      <div class="wrapper">
+        <header class="header">
+          <h1 class="title">calc</h1>
+          <div class="theme">
+            THEME
+            <div class="theme__options">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <input
+                class="theme__range"
+                type="range"
+                min="1"
+                max="3"
+                step="1"
+                value="1"
+                id="theme_range"
+              />
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="wrapper">
+        <div class="screen">
+          <div id="calculator_screen">0</div>
+          <div class="screen__com" id="calc_screen_com"></div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="keys" id="calculator_keyboard">
+          <button class="calc-btn" value="7">7</button>
+          <button class="calc-btn" value="8">8</button>
+          <button class="calc-btn" value="9">9</button>
+          <button value="delete" class="calc-btn keys__text btn_del">
+            DEL
+          </button>
+          <button class="calc-btn" value="4">4</button>
+          <button class="calc-btn" value="5">5</button>
+          <button class="calc-btn" value="6">6</button>
+          <button class="calc-btn" value="+">+</button>
+          <button class="calc-btn" value="1">1</button>
+          <button class="calc-btn" value="2">2</button>
+          <button class="calc-btn" value="3">3</button>
+          <button class="calc-btn" value="-">-</button>
+          <button class="calc-btn" value=".">.</button>
+          <button class="calc-btn" value="0">0</button>
+          <button class="calc-btn" value="/">/</button>
+          <button class="calc-btn" value="*">x</button>
+          <button value="reset" class="calc-btn keys__text btn_reset">
+            RESET
+          </button>
+          <button value="Enter" class="calc-btn keys__text btn_equal">=</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // change theme
+      function saveTheme(nameTheme) {
+        const themeLocal = window.localStorage;
+        themeLocal.setItem("themeNumber", nameTheme);
+      }
+      function changeTheme(nu) {
+        saveTheme(nu);
+        switch (nu) {
+          case "1":
+            document.body.className = "theme-one";
+            break;
+          case "2":
+            document.body.className = "theme-two";
+            break;
+          case "3":
+            document.body.className = "theme-three";
+            break;
+        }
+      }
+
+      const inputTheme = document.getElementById("theme_range");
+      inputTheme.addEventListener("change", e => {
+        const themeNumber = e.target.value;
+        changeTheme(themeNumber);
+      });
+
+      const verTheme = window.localStorage.getItem("themeNumber");
+      if (verTheme) {
+        changeTheme(verTheme);
+        inputTheme.value = verTheme;
+      } else {
+        document.body.className = "theme-one";
+        inputTheme.value = "1";
+      }
+    </script>
+    <script src="/js/main.js" type="module"></script>
+  </body>
+</html>

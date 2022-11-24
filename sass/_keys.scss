@@ -1,0 +1,47 @@
+.keys {
+  font-size: $fontSize-number;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.4em;
+  background-color: var(--bg-toggle);
+  border-radius: 0.2em;
+  padding: 0.6em;
+  transition: $transition-base;
+}
+.key > * {
+  transition: inherit;
+}
+.keys > button {
+  font-size: inherit;
+  font-family: "Spartan";
+  display: block;
+  color: var(--text-number);
+  /*default style for button*/
+  background-color: var(--key-number);
+  padding: 0.4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2em;
+  border-bottom: 3px solid var(--key-number-shadow);
+  cursor: pointer;
+}
+
+.keys > .keys__text {
+  font-size: $fontSize-number - 18;
+  color: var(--text-color);
+}
+.btn_reset,
+.btn_equal {
+  grid-column: span 2;
+  padding: 1.2em !important;
+}
+.keys .btn_del,
+.keys .btn_reset {
+  background-color: var(--key-dark);
+  border-bottom-color: var(--key-dark-shadow);
+}
+.keys .btn_equal {
+  background-color: var(--key-result);
+  border-bottom-color: var(--key-result-shadow);
+}

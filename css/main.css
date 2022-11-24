@@ -1,0 +1,222 @@
+body.theme-one {
+  --bg-main: #3a4764;
+  --bg-toggle: #232c43;
+  --bg-screen: #182034;
+  --key-dark: #637097;
+  --key-dark-shadow: #404e72;
+  --key-result: #d03f2f;
+  --key-result-shadow: #93261a;
+  --key-number: #eae3dc;
+  --key-number-shadow: #b4a597;
+  --text-number: #444b5a;
+  --text-color: white;
+  --text-header: white;
+  --text-screen: white;
+}
+
+body.theme-two {
+  --bg-main: #e6e6e6;
+  --bg-toggle: #d1cccc;
+  --bg-screen: #ededed;
+  --key-dark: #377f86;
+  --key-dark-shadow: #1b5f65;
+  --key-result: #ca5502;
+  --key-result-shadow: #893901;
+  --key-number: #e5e4e1;
+  --key-number-shadow: #a69d91;
+  --text-number: #35352c;
+  --text-color: white;
+  --text-header: #35352c;
+  --text-screen: #35352c;
+}
+
+body.theme-three {
+  --bg-main: #160628;
+  --bg-toggle: #1d0934;
+  --bg-screen: #1d0934;
+  --key-dark: #58077d;
+  --key-dark-shadow: #bc15f4;
+  --key-result: #00e0d1;
+  --key-result-shadow: #6cf9f2;
+  --key-number: #341c4f;
+  --key-number-shadow: #871c9c;
+  --text-number: #ffe53d;
+  --text-color: white;
+  --text-header: #ffe53d;
+  --text-screen: #ffe53d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  background-color: var(--bg-main);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.body {
+  max-width: 500px;
+  padding: 18px 0;
+  margin: 0 auto;
+}
+
+.wrapper {
+  padding: 12px 25px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-header);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.header > * {
+  transition: inherit;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.theme__options {
+  display: flex;
+  flex-direction: row;
+  width: 60px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 14px;
+}
+
+.theme__options > span {
+  flex: 1;
+  text-align: center;
+}
+
+.theme__range {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--bg-toggle);
+  border-radius: 0.8em;
+  height: 22px;
+  padding: 4px;
+}
+
+.theme__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--key-result);
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+}
+
+.theme__range::-moz-range-thumb {
+  width: 16px;
+  /* Set a specific slider handle width */
+  height: 16px;
+  /* Slider handle height */
+  border-radius: 50%;
+  background: var(--key-result);
+  cursor: pointer;
+  /* Cursor on hover */
+  border: none;
+}
+
+.screen {
+  background-color: var(--bg-screen);
+  color: var(--text-screen);
+  text-align: right;
+  font-size: 32px;
+  border-radius: 0.2em;
+  padding: 0.6em;
+  position: relative;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.screen__com {
+  color: inherit;
+  position: absolute;
+  bottom: 0;
+  right: 0.6em;
+  font-size: 0.6em;
+  transform: translate(-100%, 0);
+}
+
+.keys {
+  font-size: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.4em;
+  background-color: var(--bg-toggle);
+  border-radius: 0.2em;
+  padding: 0.6em;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.key > * {
+  transition: inherit;
+}
+
+.keys > button {
+  font-size: inherit;
+  font-family: "Spartan";
+  display: block;
+  color: var(--text-number);
+  /*default style for button*/
+  background-color: var(--key-number);
+  padding: 0.4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2em;
+  border-bottom: 3px solid var(--key-number-shadow);
+  cursor: pointer;
+}
+
+.keys > .keys__text {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.btn_reset,
+.btn_equal {
+  grid-column: span 2;
+  padding: 1.2em !important;
+}
+
+.keys .btn_del,
+.keys .btn_reset {
+  background-color: var(--key-dark);
+  border-bottom-color: var(--key-dark-shadow);
+}
+
+.keys .btn_equal {
+  background-color: var(--key-result);
+  border-bottom-color: var(--key-result-shadow);
+}
+
+/*# sourceMappingURL=main.css.map */
